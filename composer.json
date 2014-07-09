@@ -1,0 +1,53 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"require": {
+		"laravel/framework": "4.2.*"
+	},
+	"require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "phpspec/phpspec": "2.0.*@dev",
+        "behat/behat": "2.5.*@stable",
+        "behat/symfony2-extension": "1.1.*@dev",
+        "behat/mink":   "1.5.*@stable",
+        "behat/mink-extension":          "*",
+        "behat/mink-browserkit-driver":  "*",
+        "behat/mink-selenium2-driver":   "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-sahi-driver": "*"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php"
+		]
+	},
+    "psr-4": {
+        "Ill\\": "app/Ill",
+        "Modules\\": "app/modules"
+    },
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist",
+		"bin-dir": "bin/"
+	},
+	"minimum-stability": "stable"
+}

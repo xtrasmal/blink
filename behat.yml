@@ -1,0 +1,6 @@
+blog:
+  filters:
+    tags: "@blog"
+  paths:
+    features: app/modules/Blog/tests/features
+    bootstrap: app/modules/Blog/tests/features/bootstrap
